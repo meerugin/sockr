@@ -6,15 +6,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Docker
-        uses: meerugin/sockr@v1
       
       - name: docker build
         run: docker build -t ghcr.io/meerugin/sockr:1.0 .
